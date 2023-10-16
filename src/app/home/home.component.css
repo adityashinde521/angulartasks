@@ -1,0 +1,170 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.stylebinding{
+  border: 1px solid #ccc;
+  height: auto;
+  width: auto;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+
+}
+
+.ngif {
+    border: 1px solid #ccc;
+    height: auto;
+    width: auto;
+   
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: rgb(158, 255, 224);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+
+  }
+  .center {
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+    width: 20%;
+    height: fit-content;
+  }
+
+  .twowaybind {
+    border: 1px solid #ccc;
+    height: auto;
+    width: auto;
+   
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #9ea5ff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+
+  }
+  .error{
+    background-color: #dcf28e;
+    font-style: italic;
+  }
+  
+  #ngstyle {
+    border: 1px solid #ccc;
+    height: auto;
+    width: auto;
+
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #b6bcbc;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+
+  }
+  .clk{
+    border: 1px solid #ccc;
+    height: auto;
+    width: auto;
+   
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: rgb(158, 255, 224);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+
+  }
+
+  
+  .eventpayload{
+    border: 1px solid #ccc;
+    height: auto;
+    width: auto;
+    
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: hsl(180, 6%, 82%);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .switchcase {
+    border: 1px solid #ccc;
+    height: auto;
+    width: auto;
+   
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #9ee0ff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+
+  }
+
+  .ngfortable, .pipes{
+    height: auto;
+    width: auto;   
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #98f58d;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    table, td, th {
+      border: 1px solid;
+    }
+  }
+  .ngfortrackBy{
+
+    border: 1px solid #ccc;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: hsl(45, 84%, 76%);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+
+  }
+
+  .GroupinngFor{
+    border: 1px solid #ccc;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #9ee0ff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+
+  }
+
+
+  .ngstyledyn{
+    border: 1px solid #ccc;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: hsl(277, 85%, 89%);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+
+  }
+  .ngclasseg{
+    border: 1px solid #ccc;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #a8a8a8;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  }
+  .three{
+    font-style: italic;
+    border: 1px solid;
+  }
+  .four{
+    font-size: medium;
+    color: azure;
+  }
+
+  

@@ -1,0 +1,37 @@
+.nav{
+  border: 1px solid #ccc;
+  height: auto;
+  width: auto;
+  display: block;
+  padding: 20px;
+  margin: 10px;
+  justify-content: space-between;
+  border-radius: 5px;
+  background-color: rgb(96, 92, 101);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    
+}
+
+ ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 60px;
+  }
+  
+  li {
+    width: 10px;
+    display: inline;
+    justify-content: space-between;
+    padding: 10px 16px 20px 20px;
+  }
+
+  li a{
+    text-decoration:none;
+    font-size: larger;
+    color: azure;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  li a:hover{
+    color: rgb(22, 17, 22);
+  }

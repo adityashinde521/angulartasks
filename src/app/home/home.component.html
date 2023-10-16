@@ -1,0 +1,367 @@
+<app-navbar ></app-navbar>
+<app-textbox [pageName]="'Home'"></app-textbox>
+<!-- Interpolation Example -->
+<div class="eventpayload">
+    <h3><b> Interpolation Example</b></h3>
+    <p>Interploation Example1: {{interpolationvar}}</p>
+    <p><b>Interploation Example2 : Mathematical Operation></b></p>
+    <p>Multiplication: {{interpolvar2 * interpolvar3}}</p>
+    <p>Comparision Between Length & Breadth: {{interpolvar2  > interpolvar3}}</p>
+
+</div>
+
+
+<!-- Property Binding -->
+<div class="GroupinngFor">
+    <h3><b>Property Binding</b></h3>
+
+    <img [src]="imageUrl" alt="Image" width="100" height="100" class="center">
+    <br>
+    <button [disabled]="isDisabled">Click me</button>
+    <br>
+   
+    <br>
+    <div [innerHTML]="htmlContent"></div>
+    <br>
+    <button [title]="buttonTitle">Hover over me</button>
+</div>
+
+<!-- Style Binding -->
+
+<div class="stylebinding" [style.backgroundColor]="isBackgroundRed ? 'pink' : 'yellow'">
+    This is a dynamic background color.
+    <button (click)="toggleBackgroundColor()">Toggle Color</button>
+    <br>
+    <br>
+
+    <span [style.fontSize.px]="fontSize">Dynamic Font Size </span>
+    <button (click)="increaseFontSize()">Increase Font Size</button>
+    <button (click)="decreaseFontSize()">Decrease Font Size</button>
+    <br>
+    //
+    <div [style.color]="isTextRed ? 'red' : 'black'">Binding Style with [style.property]. This text will be red when the expression is ture.</div>
+    <br>
+    <span [class.error]="isError"><b>I'm the implementation of Class binding with [class.ClassName], My background color will turn yellow if isError is false.</b></span> 
+    <br>
+    <br><span [style]="{'color':'auqa', 'font-style':'italic'}">I'm Inline Style with [style]</span>
+</div>
+
+
+<!-- ngstyle Example -->
+<p>[ngStyle] allows you to dynamically apply multiple classes based on expressions or objects.</p>
+<p id="ngstyle" [ngStyle]="{'color':'red', 'font-style':'italic'}">I'm exampe of ngstyle having syntax [ngstyle] = css
+</p>
+
+Dynamic Styles with Functions:
+<p [ngStyle]="calculateStyles()">This is some text.</p>
+
+<!-- ngClass Examples -->
+
+
+<!-- Event Bindinng with Interpolation-->
+<div class=clk>
+    <h2><b>Event Binding</b></h2>  
+    <button (click)="ClickMe()">Button 1</button>
+    <p>You have clicked using click Event {{count}}</p>
+
+    <button type="button" (click)="onClickMe()">Click me!</button>
+    {{clickMessage}}
+    
+    <br>
+    <br>
+
+
+    First Name: <input type="text" placeholder="FirstName" (keyup)="GetFirstName($event)">
+    <br>
+    Last Name: <input type="text" placeholder="FirstName" (keyup)="GetLastName($event)">
+    <br>
+    Full Name: {{firstname}} {{lastname}}
+
+    <br>
+    <br>
+
+    <div>
+        <label for="inputField">Enter your Age:</label>
+        <input id="inputField" type="number" (input)="onInputChange($event)" [(ngModel)]="inputValue">
+      </div>
+      <p>Your Age: {{ inputValue }}</p>
+      
+
+</div>
+
+
+
+<!-- TWO WAY BINDING EXAMPLE -->
+<div class="twowaybind">
+    <h2>Example 1 - Without ngModel</h2>
+    <input type="text" [value]="fullname" (input)="fullname=($any($event.target).value)">
+    <p> You entered {{fullname}}</p>
+    <button (click)="clearname()">Clear</button>
+    <br>
+    
+    <br>
+    <h3>The difference in case scenerios Data Binding></h3>
+    <p><b>Ex. 2</b></p>
+    <input type="text" [value]="message1"> The message content will be shown in box. Its kind of only Interpolation inside textbox i.e HTML Property
+    <br>
+    {{message1}}  -- Actual Interpolation outside, the content hardcoded assigned in variable is stored here
+    <br>
+    <input type="text" (input)="InputEvent($event)">
+    <br>
+    {{message2}} -- One way event binding dynamic value change from screen to component.
+    <br>
+    <input type="text" [(ngModel)]="message">
+    <br>
+    {{message}} -- Dynamically value changed as entered in the box. Change in value in component will also change the value in text box as well as interpolation.
+
+
+</div>
+   
+<div class="ngif">
+    <!-- ngIf Example -->
+    <div *ngIf="ngiffun">This is ngif example excuted</div>
+    <br>
+    <button (click)="toggleMessage()">Toggle Message</button>
+    <div *ngIf="showMessage">
+        <p>This message will only be displayed if showMessage is true. ngif is used to manipulate </p>
+    </div>
+    
+
+    <br>
+    <h2>Ng If Example 2</h2>
+
+    <input type="radio" name="radiobtn" (click)="changevalue(true)">Radio value:True<br>
+    <input type="radio" name="radiobtn" (click)="changevalue(false)">Radio value:False<br>
+
+    <div *ngIf="isvalid"><b>This is valid data</b></div>
+    <div *ngIf="!isvalid"><b>This is not valid data</b></div>
+
+
+
+    <h2>Ng If Example 3 using elseblock</h2>
+
+    <input type="radio" name="radiobtn" (click)="changevalue(true)">Radio value:True<br>
+    <input type="radio" name="radiobtn" (click)="changevalue(false)">Radio value:False<br>
+
+    <div *ngIf="isvalid, else elseblock">
+        <b>This is valid data</b>
+    </div>
+    <ng-template #elseblock>
+        <div><b>This is not valid data using elseblock</b></div>
+    </ng-template>
+
+</div>
+
+
+<div class="switchcase">
+    <p> <b>Example 1 </b></p>
+    <p>SwtichCase Example Myshopping : {{Myshopping}}</p>
+    <div [ngSwitch]="Myshopping">
+        <p *ngSwitchCase="'cups'">cups</p>
+        <p *ngSwitchCase="'veg'">Vegetables</p>
+        <p *ngSwitchCase="'clothes'">Trousers</p>
+        <p *ngSwitchDefault>My Shopping</p>
+    </div>
+
+    <p> <b>Example 2 using ngModel</b></p>
+    <div>
+        <input type="radio" name="options" value="option1" [(ngModel)]="selectedOption"> Option 1
+        <input type="radio" name="options" value="option2" [(ngModel)]="selectedOption"> Option 2
+        <input type="radio" name="options" value="option3" [(ngModel)]="selectedOption"> Option 3
+
+        <div [ngSwitch]="selectedOption">
+            <div *ngSwitchCase="'option1'">Option 1 was selected</div>
+            <div *ngSwitchCase="'option2'">Option 2 was selected</div>
+            <div *ngSwitchCase="'option3'">Option 3 was selected</div>
+            <div *ngSwitchDefault>Select an option</div>
+        </div>
+    </div>
+    <div>
+        <p> <b>Example 3 with dynamic value change</b></p>
+        <div>
+            <button (click)="setUserRole('admin')">Set User Role to Admin</button>
+            <button (click)="setUserRole('user')">Set User Role to User</button>
+            <button (click)="setUserRole('guest')">Set User Role to Guest</button>
+        </div>
+
+        <div [ngSwitch]="userRole">
+            <div *ngSwitchCase="'admin'">Welcome, Admin!</div>
+            <div *ngSwitchCase="'user'">Welcome, User!</div>
+            <div *ngSwitchCase="'guest'">Welcome, Guest!</div>
+            <div *ngSwitchDefault>Welcome, Stranger!</div>
+        </div>
+
+    </div>
+    <div>
+        <p> <b>Example 4 with event binding</b></p>
+        <label for="userRoleSelect">Select User Role:</label>
+        <select id="userRoleSelect" [(ngModel)]="userRole">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+            <option value="guest">Guest</option>
+        </select>
+    </div>
+
+    <div [ngSwitch]="userRole">
+        <div *ngSwitchCase="'admin'">Welcome, Admin!</div>
+        <div *ngSwitchCase="'user'">Welcome, User!</div>
+        <div *ngSwitchCase="'guest'">Welcome, Guest!</div>
+        <div *ngSwitchDefault>Welcome, Stranger!</div>
+    </div>
+</div>
+
+<div class="ngfortable">
+    <p><b>NgFor Example 1 </b></p>
+
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-secondary">
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Age</th>
+                <th scope="col">Address</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{ user.Id }}</td>
+                <td>{{ user.Name }}</td>
+                <td>{{ user.Mobile }}</td>
+                <td>{{ user.Age }}</td>
+                <td>{{ user.Address }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="ngfortrackBy">
+    <p><b>NgFor Example 2 with trackBy Employee List</b></p>
+    <h2>Employee List</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Position</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Display employees -->
+            <tr *ngFor="let employee of employees">
+                <td>{{ employee.id }}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.position }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button (click)="addEmployee()">Add Employee (hardcoded values)</button>
+
+    <h2>Add New Employee</h2>
+    <form (ngSubmit)="addEmployeee()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" [(ngModel)]="newEmployee.name" name="name">
+        <label for="position">Position:</label>
+        <input type="text" id="position" [(ngModel)]="newEmployee.position" name="position">
+        <button type="submit">Add Employee</button>
+    </form>
+</div>
+<div class="GroupinngFor">
+    <p><b>NgFor Example 2 with trackBy Employee List</b></p>
+    <h2>People List Grouped by Country and City</h2>
+
+    <div *ngFor="let country of peopleByCountryCity">
+        <h3>{{ country.country }}</h3>
+
+        <div *ngFor="let city of country.cities">
+            <h4>{{ city.name }}</h4>
+
+            <ul>
+                <li *ngFor="let person of city.people">
+                    {{ person }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="ngstyledyn">
+    <p><b>ngSTyle Example 1 : Change color dynamically as per country names</b></p>
+    <ul *ngFor="let person of people">
+        <li [ngStyle]="{'color': getcolor(person.Country)}">
+            {{person.name}} - {{person.Country}}
+        </li>
+    </ul>
+
+</div>
+
+
+<div class="ngclasseg">
+    <p [ngClass]="'three'"><b>ngClass Example 1 : Changing this text to italic and border using NGCLASS AS STRING
+            (three)</b></p>
+    <p><b>ngClass Example 2 : Changing this text style ngClass four</b></p>
+    <ul *ngFor="let person of people" [ngClass]="'four'">
+        {{person.name}} - {{person.Country}}
+    </ul>
+    <p [ngClass]="'three four'"><b>ngClass Example 3 : Multiple ngClass </b></p>
+    <p [ngClass]="['three', 'four']"><b>ngClass Example 4 : Multiple NGCLASS AS AN ARRAY</b></p>
+
+    <p [ngClass]="getcssclass('mode')"><b>ngClass Example 5 : ngClass with Component method </b></p>
+</div>
+
+
+<div class="pipes">
+    <h3><b>Pipes Examples</b></h3>
+    <table  border-collapse="collapse" width="50%">
+        <tr >
+            <th>empcode</th>
+            <th>name : Pipe used to uppercase enteries</th>
+            <th>dob</th>
+            <th>salary</th>
+        </tr>
+        <tr *ngFor="let employe of employeess">
+            <td>{{employe.empcode}}</td>
+            <td>{{employe.name | uppercase}}</td>
+            <td>{{employe.dob}}</td>
+            <td>{{employe.salary}}</td>
+        </tr>
+    </table><br>
+
+    <p><b>Filters on date</b></p>
+    <p>Pipe Example 1: Default         - {{employeess[2].dob}}</p>
+    <p>Pipe Example 2: Specific syntax - {{employeess[2].dob|date:'dd/MM/yyyy'}}</p>
+    <p>Pipe example 3: Only Time       - {{employeess[2].dob | date:"mediumTime"}}</p>
+    <p>Pipe Example 4: Medium Date     - {{employeess[2].dob|date:"medium" | lowercase}}</p><br>
+    <p>Pipe Example 5: Short Date     - {{employeess[2].dob|date:"shortDate"}}</p><br>
+    <p>Pipe Example 6: Long Date     - {{employeess[2].dob|date:"longDate"}}</p><br>
+    <p>Pipe Example 7: Full Date     - {{employeess[2].dob|date:"fullDate"}}</p><br>
+
+    <p><b>Filters on Salary</b></p>
+    <p>Pipe Example 1: Default         - {{employeess[2].salary | currency:"INR"}}</p>
+    <p>{{str1| titlecase}}</p>
+
+    <p><b>JSON PIPE EXAMPLE</b></p>
+
+    <div>
+        {{employeess|json}} <br>
+        {{employeess|slice:1:3 |json}}
+    </div><br>
+
+    <p><b>CUSTOM PIPE EXAMPLE</b></p>
+    <table  border-collapse="collapse" width="60%">
+        <tr >
+            <th>Empcode</th>
+            <th>Name : Custom Pipe Applied Mr./Mrs.</th>
+            <th>Dob</th>
+            <th>Salary</th>
+            <th>Gender</th>
+        </tr>
+        <tr *ngFor="let empl of employes">
+            <td>{{empl.empcode}}</td>
+            <td>{{empl.name | mypipe:empl.gender}}</td>
+            <td>{{empl.dob}}</td>
+            <td>{{empl.salary}}</td>
+            <td>{{empl.gender}}</td>
+        </tr>
+    </table><br>
+</div>
