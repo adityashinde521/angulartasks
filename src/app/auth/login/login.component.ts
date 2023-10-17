@@ -43,7 +43,12 @@ export class LoginComponent implements OnInit {
     }
   }
 
-
+//   filldataa(){
+//   this.templateForm.setValue({
+//     "email":"user@example.com",
+//     "passcode":"password",
+//   })
+// }
 
   onReactiveFormSubmit() {
     if (this.reactiveForm.valid) {
@@ -61,16 +66,26 @@ export class LoginComponent implements OnInit {
         // Invalid login, handle accordingly (e.g., show an error message)
         console.log('Invalid login');
         // Reset the form
-        // this.reactiveForm.reset();
+        this.reactiveForm.reset();
         // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
         // this.router.navigate(['/login']);
       }
     }
 
+  
     // this.enteredUsername = this.reactiveForm.get('username')?.value;
     // this.enteredPassword = this.reactiveForm.get('password')?.value;
     // console.log(this.enteredUsername);
     // console.log(this.enteredPassword);
+  }
+
+    
+  filldata(){
+    this.reactiveForm.setValue({
+      "username":"user",
+      "password":"pass",
+    })
+   
   }
 
   ngOnInit(): void {

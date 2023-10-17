@@ -18,7 +18,10 @@ import { RouterModule } from '@angular/router';
 import { AuthModule } from './auth/auth.module';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {MatInputModule} from '@angular/material/input';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -35,10 +38,13 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     FormsModule,
+    MatInputModule,
     AuthModule,
+    MaterialModule,
     AppRoutingModule,
     RouterModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     
   ],
   providers: [],

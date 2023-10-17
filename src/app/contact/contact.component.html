@@ -1,2 +1,85 @@
 <app-navbar ></app-navbar>
 <app-textbox [pageName]="'Contact'"></app-textbox>
+
+<form [formGroup]="ContactusForm" (ngSubmit)="onFormSubmit()">
+<table class="contactustable">
+    <mat-card>
+        <mat-card-content>
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>First Name</mat-label>
+                        <input matInput formControlName="FirstName" placeholder="First Name">
+                      </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Last Name</mat-label>
+                        <input formControlName="LastName" matInput placeholder="Last Name">
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Mobile Number</mat-label>
+                        <input type="tel" matInput formControlName="MobileNumber" 
+                               placeholder="Ex. 555-555-5555">
+                        <mat-hint>Errors appear instantly!</mat-hint>
+                        <mat-error *ngIf="formControlName.hasError('pattern')">
+                          Please enter a valid phone number
+                        </mat-error>
+                        <mat-error *ngIf="formControlName.hasError('required')">
+                          Phone number is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput formControlName="Email"
+                               placeholder="Ex. pat@example.com">
+                        <mat-hint>Errors appear instantly!</mat-hint>
+                        <mat-error *ngIf="formControlName.hasError('email') && !formControlName.hasError('required')">
+                          Please enter a valid email address
+                        </mat-error>
+                        <mat-error *ngIf="formControlName.hasError('required')">
+                          Email is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Date of Report</mat-label>
+                        <input type="date" formControlName="DateofEnquiry" matInput placeholder="Date of Enquiry">
+                      </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Enter your Feedback/Concern</mat-label>
+                        <textarea matInput formControlName="Textarea" placeholder="Ex. It makes me feel..."></textarea>
+                      </mat-form-field>
+                </td>
+            </tr>
+            <!-- <tr>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Agree to all terms and conditions</mat-label>
+                    <input type="checkbox" matInput>
+                  </mat-form-field>
+                
+            </tr> -->
+            <tr>
+                <td>
+                    <button mat-raised-button color="primary" type="submit">Submit</button>
+                </td>
+            </tr>
+        </mat-card-content>
+    </mat-card>
+    
+    
+</table>
+</form>
